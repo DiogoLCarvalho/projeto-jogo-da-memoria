@@ -97,7 +97,7 @@ function colocandoImgs() {
 // Verificar se é igual
 function verificarCard() {
     // pegue todas as imagens
-    var cards = document.querySelectorAll('img');
+    let cards = document.querySelectorAll('img');
 
     // Coloque em variaveis os valores dos id
     const opcaoUm = cardEscolhidoId[0];
@@ -127,6 +127,11 @@ function verificarCard() {
     cardEscolhidoId = [];
     resultado.textContent = cardCombinados.length;
 
+    // Pegue o tag img e reinicie para vc clicar nele novamente
+    cards[opcaoUm].style.pointerEvents="auto";
+    cards[opcaoDois].style.pointerEvents="auto";
+
+
     // tem q ser divido por dois pq vc esta dobrando no cardArray
     if (cardCombinados.length === cardArray.length / 2) {
         resultado.textContent = 'Parabéns! Você combinou todos os cards!'
@@ -138,7 +143,7 @@ function verificarCard() {
 function virarCard() {
     // já que a função vai ser iniciada com o click. Ao clicar pegue o data-id do elemento clicado
     var cardId = this.getAttribute('data-id');
-
+    
     // coloque no array o nome do id(numero) do array clicado acima. Clico na imagem do Brasil q tem id 0; coloque nesse array o nome brasil
     cardEscolhido.push(cardArray[cardId].nome);
 
@@ -148,6 +153,9 @@ function virarCard() {
     // Vc vc executa esta função vc clicou em algum elemento, então de acordo com o id do elemento coloque a imagem q esta no cardArray
     this.setAttribute('src', cardArray[cardId].img);
 
+    // Pegue o tag img e quando vc clicar nele vc não pode clicar novamente nele pq esta oculto
+    let cards = document.querySelectorAll('img');
+    cards[cardId].style.pointerEvents="none";
 
     // Então, vc vai poder executar está função duas vezes, para verificar o q vc escolheu 
     if (cardEscolhido.length === 2) {
