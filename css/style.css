@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Readex+Pro:wght@400;700&display=swap');
+:root{
+    --colorOne:#107AB0;
+    --colorTwo:#FDC1C5;
+    --colorThree:#FD5956;
+    --colorFour: #fff;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background: var(--colorOne);
+    font-family: 'Readex Pro', sans-serif;
+}
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    height: 100vh;
+}
+#info{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    width: 50vw;
+}
+/* Texto e links */
+#textScore{
+    color: var(--colorFour);
+    font-size: 1.5rem;
+}
+#info__ul{
+    list-style: none;
+
+}
+#info__ul li{
+    display: inline-block;
+    font-size: 2rem;
+}
+#info__ul li:first-child {
+    margin-left: 50px;
+}
+#info__ul li a i{
+    color: var(--colorFour);
+    transition: all .5s ease-in-out;
+}
+#info__ul li a i:hover{
+    color: var(--colorTwo);
+}
+#info__ul li+li{
+    margin-left: 10px;
+}
+/* cards */
+#cards{
+    background: var(--colorThree);
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    /* O width e o height são calculados contando o width da imagem, margin e o padding do card. Para q tudo fique arrumado */ 
+    width: 542px;
+    height: 442px;
+	margin: 15px auto;
+	padding: 16px;
+	border-radius: 10px;
+	box-shadow: 14px 14px 0 0 #000000;
+}
+img{
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+}
+#cards img{
+    margin: 10px;
+    cursor: pointer;
+}
