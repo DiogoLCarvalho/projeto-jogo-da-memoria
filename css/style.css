@@ -1,20 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Readex+Pro:wght@400;700&display=swap');
-:root{
-    --colorOne:#107AB0;
-    --colorTwo:#FDC1C5;
-    --colorThree:#FD5956;
+@import 'popup.css';
+
+:root {
+    --colorOne: #107AB0;
+    --colorTwo: #FDC1C5;
+    --colorThree: #FD5956;
     --colorFour: #fff;
 }
-*{
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-body{
+
+body {
     background: var(--colorOne);
     font-family: 'Readex Pro', sans-serif;
+    position: relative;
 }
-main{
+
+main {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -22,7 +28,8 @@ main{
     align-items: center;
     height: 100vh;
 }
-#info{
+
+#info {
     display: flex;
     flex-wrap: wrap;
     align-content: center;
@@ -30,54 +37,121 @@ main{
     align-items: center;
     width: 50vw;
 }
+
 /* Texto e links */
-#textScore{
+#textScore {
     color: var(--colorFour);
     font-size: 1.5rem;
 }
-#info__ul{
+
+#info__ul {
     list-style: none;
 
 }
-#info__ul li{
+
+#info__ul li {
     display: inline-block;
     font-size: 2rem;
 }
+
 #info__ul li:first-child {
     margin-left: 50px;
 }
-#info__ul li a i{
+
+#info__ul li a i {
     color: var(--colorFour);
     transition: all .5s ease-in-out;
 }
-#info__ul li a i:hover{
+
+#info__ul li a i:hover {
     color: var(--colorTwo);
 }
-#info__ul li+li{
+
+#info__ul li+li {
     margin-left: 10px;
 }
+
 /* cards */
-#cards{
+#cards {
     background: var(--colorThree);
     display: flex;
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     align-content: center;
-    /* O width e o height são calculados contando o width da imagem, margin e o padding do card. Para q tudo fique arrumado */ 
+    /* O width e o height são calculados contando o width da imagem, margin e o padding do card. Para q tudo fique arrumado */
     width: 542px;
     height: 442px;
-	margin: 15px auto;
-	padding: 16px;
-	border-radius: 10px;
-	box-shadow: 14px 14px 0 0 #000000;
+    margin: 15px auto;
+    padding: 16px;
+    border-radius: 10px;
+    box-shadow: 14px 14px 0 0 #000000;
 }
-img{
+
+img {
     width: 100px;
     height: 100px;
     border-radius: 10px;
 }
-#cards img{
+
+#cards img {
     margin: 10px;
     cursor: pointer;
+    transform: rotateY(180deg);
 }
+
+#cards .animationWrong{
+    animation: shake-horizontal 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+}
+#cards .animationClose{
+    animation: animationWin 0.6s cubic-bezier(0.550, 0.085, 0.680, 0.530) both; 
+}
+
+#cards #animationOpen {
+    transition: all .3s ease;
+    transform: rotateY(0);
+}
+
+@keyframes animationWin {
+    0% {
+        -webkit-transform: rotateY(360deg);
+        transform: rotateY(360deg);
+        opacity: 1;
+    }
+
+    100% {
+        -webkit-transform: rotateY(0deg);
+        transform: rotateY(0deg);
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+  @keyframes shake-horizontal {
+    0%,
+    100% {
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+    }
+    10%,
+    30%,
+    50%,
+    70% {
+      -webkit-transform: translateX(-10px);
+              transform: translateX(-10px);
+    }
+    20%,
+    40%,
+    60% {
+      -webkit-transform: translateX(10px);
+              transform: translateX(10px);
+    }
+    80% {
+      -webkit-transform: translateX(8px);
+              transform: translateX(8px);
+    }
+    90% {
+      -webkit-transform: translateX(-8px);
+              transform: translateX(-8px);
+    }
+  }
+  
