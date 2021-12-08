@@ -75,7 +75,7 @@ var cardCombinados = [];
 
 
 // Colocando imagem na div
-function colocandoImgs() {
+function IniciandoJogo() {
     // para cada elemento do cardArray
     for (let i = 0; i < cardArray.length; i++) {
         // crie um tag img
@@ -106,21 +106,40 @@ function verificarCard() {
  
 
     if (cardEscolhido[0] === cardEscolhido[1]) {
-        alert('Eles combinam!');
+        // alert('Eles combinam!');
         // trocar imagem
         // cards[opcaoUm].setAttribute('src', 'img/endGameImage.png');
         // cards[opcaoDois].setAttribute('src', 'img/endGameImage.png');
 
         // Acho melhor tirar os elementos ao acertar
-        cards[opcaoUm].style.visibility = 'hidden';
-        cards[opcaoDois].style.visibility = 'hidden';
+        // cards[opcaoUm].style.visibility = 'hidden';
+        // cards[opcaoDois].style.visibility = 'hidden';
+
+
+        cards[opcaoUm].setAttribute('class','animationClose');
+        cards[opcaoDois].setAttribute('class','animationClose');
         
         cardCombinados.push(cardEscolhido);
 
     } else {
-        alert('Tente novamente')
-        cards[opcaoUm].setAttribute('src', 'img/startImage.png');
-        cards[opcaoDois].setAttribute('src', 'img/startImage.png');
+        // alert('Tente novamente');
+
+        cards[opcaoUm].setAttribute('class','animationWrong');
+        cards[opcaoDois].setAttribute('class','animationWrong');
+
+        setTimeout(()=>{
+            cards[opcaoUm].removeAttribute('class');
+            cards[opcaoUm].setAttribute('src', 'img/startImage.png');
+        }, 500);
+
+        setTimeout(()=>{
+            cards[opcaoDois].removeAttribute('class');
+            cards[opcaoDois].setAttribute('src', 'img/startImage.png');
+        }, 500);
+
+        
+        // cards[opcaoUm].setAttribute('src', 'img/startImage.png');
+        // cards[opcaoDois].setAttribute('src', 'img/startImage.png');
     }
     // zerar os valores dos arrays
     cardEscolhido = [];
@@ -130,6 +149,8 @@ function verificarCard() {
     // Pegue o tag img e reinicie para vc clicar nele novamente
     cards[opcaoUm].style.pointerEvents="auto";
     cards[opcaoDois].style.pointerEvents="auto";
+    cards[opcaoUm].removeAttribute('id');
+    cards[opcaoDois].removeAttribute('id');
 
 
     // tem q ser divido por dois pq vc esta dobrando no cardArray
@@ -156,14 +177,13 @@ function virarCard() {
     // Pegue o tag img e quando vc clicar nele vc não pode clicar novamente nele pq esta oculto
     let cards = document.querySelectorAll('img');
     cards[cardId].style.pointerEvents="none";
+    cards[cardId].setAttribute('id','animationOpen');
 
     // Então, vc vai poder executar está função duas vezes, para verificar o q vc escolheu 
     if (cardEscolhido.length === 2) {
-        setTimeout(verificarCard, 500)
+        setTimeout(verificarCard, 100)
     }
 }
 
 
-
-
-colocandoImgs();
+IniciandoJogo();
