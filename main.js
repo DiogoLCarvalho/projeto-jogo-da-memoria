@@ -87,7 +87,7 @@ function IniciandoJogo() {
         // crie um data attribute especifico. Tipo img[0] tem a  id 0
         card.setAttribute('data-id', i);
 
-        card.addEventListener('click',virarCard);
+        card.addEventListener('click', virarCard);
 
         // colocar tudo na div
         divCards.appendChild(card);
@@ -103,43 +103,30 @@ function verificarCard() {
     const opcaoUm = cardEscolhidoId[0];
     const opcaoDois = cardEscolhidoId[1];
 
- 
+
 
     if (cardEscolhido[0] === cardEscolhido[1]) {
-        // alert('Eles combinam!');
-        // trocar imagem
-        // cards[opcaoUm].setAttribute('src', 'img/endGameImage.png');
-        // cards[opcaoDois].setAttribute('src', 'img/endGameImage.png');
 
-        // Acho melhor tirar os elementos ao acertar
-        // cards[opcaoUm].style.visibility = 'hidden';
-        // cards[opcaoDois].style.visibility = 'hidden';
+        cards[opcaoUm].setAttribute('class', 'animationClose');
+        cards[opcaoDois].setAttribute('class', 'animationClose');
 
-
-        cards[opcaoUm].setAttribute('class','animationClose');
-        cards[opcaoDois].setAttribute('class','animationClose');
-        
         cardCombinados.push(cardEscolhido);
 
     } else {
-        // alert('Tente novamente');
 
-        cards[opcaoUm].setAttribute('class','animationWrong');
-        cards[opcaoDois].setAttribute('class','animationWrong');
+        cards[opcaoUm].setAttribute('class', 'animationWrong');
+        cards[opcaoDois].setAttribute('class', 'animationWrong');
 
-        setTimeout(()=>{
+        setTimeout(() => {
             cards[opcaoUm].removeAttribute('class');
             cards[opcaoUm].setAttribute('src', 'img/startImage.png');
         }, 500);
 
-        setTimeout(()=>{
+        setTimeout(() => {
             cards[opcaoDois].removeAttribute('class');
             cards[opcaoDois].setAttribute('src', 'img/startImage.png');
         }, 500);
 
-        
-        // cards[opcaoUm].setAttribute('src', 'img/startImage.png');
-        // cards[opcaoDois].setAttribute('src', 'img/startImage.png');
     }
     // zerar os valores dos arrays
     cardEscolhido = [];
@@ -147,15 +134,22 @@ function verificarCard() {
     resultado.textContent = cardCombinados.length;
 
     // Pegue o tag img e reinicie para vc clicar nele novamente
-    cards[opcaoUm].style.pointerEvents="auto";
-    cards[opcaoDois].style.pointerEvents="auto";
+    cards[opcaoUm].style.pointerEvents = "auto";
+    cards[opcaoDois].style.pointerEvents = "auto";
     cards[opcaoUm].removeAttribute('id');
     cards[opcaoDois].removeAttribute('id');
 
 
     // tem q ser divido por dois pq vc esta dobrando no cardArray
     if (cardCombinados.length === cardArray.length / 2) {
-        resultado.textContent = 'Parabéns! Você combinou todos os cards!'
+        let popup = document.querySelector('#conteiner__popup');
+        let button = document.querySelector('#buttonPlay');
+        popup.style.display = 'block';
+        
+        button.addEventListener('click', () => {
+            // Recarregar página
+            window.location.reload();
+        });
     }
 }
 
@@ -164,7 +158,7 @@ function verificarCard() {
 function virarCard() {
     // já que a função vai ser iniciada com o click. Ao clicar pegue o data-id do elemento clicado
     var cardId = this.getAttribute('data-id');
-    
+
     // coloque no array o nome do id(numero) do array clicado acima. Clico na imagem do Brasil q tem id 0; coloque nesse array o nome brasil
     cardEscolhido.push(cardArray[cardId].nome);
 
@@ -176,8 +170,8 @@ function virarCard() {
 
     // Pegue o tag img e quando vc clicar nele vc não pode clicar novamente nele pq esta oculto
     let cards = document.querySelectorAll('img');
-    cards[cardId].style.pointerEvents="none";
-    cards[cardId].setAttribute('id','animationOpen');
+    cards[cardId].style.pointerEvents = "none";
+    cards[cardId].setAttribute('id', 'animationOpen');
 
     // Então, vc vai poder executar está função duas vezes, para verificar o q vc escolheu 
     if (cardEscolhido.length === 2) {
