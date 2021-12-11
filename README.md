@@ -46,14 +46,14 @@ A função <i>virarCard</i> só pode ser executada duas vezes seguidas. Porque d
 
 <p align="justify">
  
-A variável cards possui todas as tags de imagens. As variáveis <i>opçãoUm</i> e <i> OpçãoDois</i> tem os valores dos id 's dos cards selecionados. Com isso um <b>if</b> é executado, se os dois cards selecionados pelo usuário forem iguais, aplique uma class que possui uma animação e coloque o cardEscolhido em cardsCombinados, que vai ser útil no final do jogo.  
+A variável cards possui todas as tags de imagens. As variáveis <i>opçãoUm</i> e <i> OpçãoDois</i> tem os valores dos id 's dos cards selecionados. Com isso um <b>if</b> é executado, se os dois cards selecionados pelo usuário forem iguais, aplique uma <i>class</i> que possui uma animação e coloque o <i>cardEscolhido</i> em <i>cardsCombinados</i>, que vai ser útil no final do jogo.  
  
 </p>
 
 
 <p align="justify">
  
-Caso contrário, é claro, o usuário errou <img src="https://i.pinimg.com/originals/4c/6c/69/4c6c693465e89a914c40ba485cc721b4.gif" width="30px"  align="center"> . Então como no acerto é aplicado um class com uma animação, só que desta vez uma animação de erro. Dois setTimeout são executados, com um tempo de 500 milésimos, removendo a class que foi acabada de ser colocada e restaurando a tag imagem com a url da imagem inicial.  
+Caso contrário, é claro, o usuário errou <img src="https://i.pinimg.com/originals/4c/6c/69/4c6c693465e89a914c40ba485cc721b4.gif" width="30px"  align="center"> . Então, como no acerto é aplicado um <i>class</i> com uma animação, só que desta vez uma animação de erro. Dois setTimeout são executados, com um tempo de 500 milésimos, removendo a <i>class</i> que foi acabada de ser colocada e restaurando a tag imagem com a url inicial.  
  
 </p>
 
@@ -61,7 +61,7 @@ Caso contrário, é claro, o usuário errou <img src="https://i.pinimg.com/origi
 
 <p align="justify">
  
-Para acabar <img src="https://i.imgur.com/axn0PaC.gif" width="50px"  align="center"> vários valores, arrays, estilos são resetados ou removidos. Há um <b>if</b> ao final, para quando o usuário acertar todos os cards. O parâmetro de parada do <b>if</b> é pela igualdade do tamanho do array cardCombinados e o array cardArray dividido por 2, pois, como mencionado anteriormente, este array tem elementos duplicados. 
+Para acabar <img src="https://i.imgur.com/axn0PaC.gif" width="50px"  align="center"> vários valores, arrays e estilos são resetados ou removidos. Há um <b>if</b> ao final, para quando o usuário acertar todos os cards. O parâmetro de parada do <b>if</b> é pela igualdade do tamanho do array cardCombinados e o array cardArray dividido por 2, pois, como mencionado anteriormente, este array tem elementos duplicados. 
 
 </p>
 
@@ -69,7 +69,7 @@ Para acabar <img src="https://i.imgur.com/axn0PaC.gif" width="50px"  align="cent
 
 <p align="justify">
  
-Se o <b>if</b> for executado, esta tela aparece: 
+Se o <b>if</b> for executado, essa tela aparece: 
 
 </p>
 
@@ -86,7 +86,7 @@ E se o usuário apertar no botão, a página reinicia e o jogo recomeça.
 
 <p align="justify">
 
-Como os cards estão organizados está diretamente ligado ao tamanho da imagem. A div container tem o width e o height exatamente calculado de acordo com o tamanho das imagens e o padding da div. Se eu eventualmente quiser colocar mais cards, terei que mudar o width e o height da div container. 
+Como os cards estão organizados está diretamente ligado ao tamanho da imagem. A div container tem o width e o height exatamente calculado de acordo com o tamanho das imagens e o padding da div. Se mais cards forem colocados, é preciso mudar o width e o height da div container. 
  
 </p>
 
