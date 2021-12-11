@@ -42,6 +42,57 @@ A função <i>virarCard</i> só pode ser executada duas vezes seguidas. Porque d
  
 </p>
 
-
 ![Captura de tela 2021-12-11 130132](https://user-images.githubusercontent.com/84794798/145683209-81a2fff3-ec2d-41bf-8e3a-adb3cf633010.png)
+
+<p align="justify">
+ 
+A variável cards possui todas as tags de imagens. As variáveis <i>opçãoUm</i> e <i> OpçãoDois</i> tem os valores dos id 's dos cards selecionados. Com isso um <b>if</b> é executado, se os dois cards selecionados pelo usuário forem iguais, aplique uma class que possui uma animação e coloque o cardEscolhido em cardsCombinados, que vai ser útil no final do jogo.  
+ 
+</p>
+
+
+<p align="justify">
+ 
+Caso contrário, é claro, o usuário errou <img src="https://i.pinimg.com/originals/4c/6c/69/4c6c693465e89a914c40ba485cc721b4.gif" width="30px"  align="center"> . Então como no acerto é aplicado um class com uma animação, só que desta vez uma animação de erro. Dois setTimeout são executados, com um tempo de 500 milésimos, removendo a class que foi acabada de ser colocada e restaurando a tag imagem com a url da imagem inicial.  
+ 
+</p>
+
+![Captura de tela 2021-12-11 133141](https://user-images.githubusercontent.com/84794798/145684216-e20902b9-cf38-46c7-a727-ab08839bf1f6.png)
+
+<p align="justify">
+ 
+Para acabar <img src="https://i.imgur.com/axn0PaC.gif" width="50px"  align="center"> vários valores, arrays, estilos são resetados ou removidos. Há um <b>if</b> ao final, para quando o usuário acertar todos os cards. O parâmetro de parada do <b>if</b> é pela igualdade do tamanho do array cardCombinados e o array cardArray dividido por 2, pois, como mencionado anteriormente, este array tem elementos duplicados. 
+
+</p>
+
+![Captura de tela 2021-12-11 135210](https://user-images.githubusercontent.com/84794798/145684864-7c236f57-b89f-4ade-91a2-24e667bf82c1.png)
+
+<p align="justify">
+ 
+Se o <b>if</b> for executado, esta tela aparece: 
+
+</p>
+
+![Captura de tela 2021-12-11 135901](https://user-images.githubusercontent.com/84794798/145685110-f95e913d-0a51-451a-ad8c-fda6bad0738c.png)
+
+<p align="justify">
+ 
+E se o usuário apertar no botão, a página reinicia e o jogo recomeça. 
+
+</p>
+
+### Detalhes a mencionar :exclamation:
+
+
+<p align="justify">
+
+Como os cards estão organizados está diretamente ligado ao tamanho da imagem. A div container tem o width e o height exatamente calculado de acordo com o tamanho das imagens e o padding da div. Se eu eventualmente quiser colocar mais cards, terei que mudar o width e o height da div container. 
+ 
+</p>
+
+## Obrigado pela atenção :exclamation:
+* Criado por <a href="https://github.com/DiogoLCarvalho"  target="_blanked">Diogo Lima Carvalho</a>. 
+
+
+<img src="https://i.pinimg.com/originals/2a/82/1e/2a821ee45ca3cbc384c0b70f730248ae.gif" width="30%"  align="center">
 
