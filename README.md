@@ -1,2 +1,2 @@
-# projeto-jogo-da-memoria
+# Jogo da Memória (Memory Game) :brain:
  
