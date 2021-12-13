@@ -145,7 +145,7 @@ function verificarCard() {
         let popup = document.querySelector('#conteiner__popup');
         let button = document.querySelector('#buttonPlay');
         popup.style.display = 'block';
-        
+
         button.addEventListener('click', () => {
             // Recarregar página
             window.location.reload();
@@ -166,8 +166,9 @@ function virarCard() {
     cardEscolhidoId.push(cardId);
 
     // Vc vc executa esta função vc clicou em algum elemento, então de acordo com o id do elemento coloque a imagem q esta no cardArray
+    // Isso coloca a imagem
     this.setAttribute('src', cardArray[cardId].img);
-
+    
     // Pegue o tag img e quando vc clicar nele vc não pode clicar novamente nele pq esta oculto
     let cards = document.querySelectorAll('img');
     cards[cardId].style.pointerEvents = "none";
