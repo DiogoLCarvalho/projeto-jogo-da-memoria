@@ -53,7 +53,7 @@ A variável cards possui todas as tags de imagens. As variáveis <i>opçãoUm</i
 
 <p align="justify">
  
-Caso contrário, é claro, o usuário errou <img src="https://i.pinimg.com/originals/4c/6c/69/4c6c693465e89a914c40ba485cc721b4.gif" width="30px"  align="center"> . Então, como no acerto é aplicado um <i>class</i> com uma animação, só que desta vez uma animação de erro. Dois setTimeout são executados, com um tempo de 500 milésimos, removendo a <i>class</i> que foi acabada de ser colocada e restaurando a tag imagem com a url inicial.  
+Caso contrário, é claro, o usuário errou <img src="https://i.pinimg.com/originals/4c/6c/69/4c6c693465e89a914c40ba485cc721b4.gif" width="3%"  align="center"> . Então, como no acerto é aplicado um <i>class</i> com uma animação, só que desta vez uma animação de erro. Dois setTimeout são executados, com um tempo de 500 milésimos, removendo a <i>class</i> que foi acabada de ser colocada e restaurando a tag imagem com a url inicial.  
  
 </p>
 
@@ -61,7 +61,7 @@ Caso contrário, é claro, o usuário errou <img src="https://i.pinimg.com/origi
 
 <p align="justify">
  
-Para acabar <img src="https://i.imgur.com/axn0PaC.gif" width="50px"  align="center"> vários valores, arrays e estilos são resetados ou removidos. Há um <b>if</b> ao final, para quando o usuário acertar todos os cards. O parâmetro de parada do <b>if</b> é pela igualdade do tamanho do array cardCombinados e o array cardArray dividido por 2, pois, como mencionado anteriormente, este array tem elementos duplicados. 
+Para acabar <img src="https://i.imgur.com/axn0PaC.gif" width="3%"  align="center"> vários valores, arrays e estilos são resetados ou removidos. Há um <b>if</b> ao final, para quando o usuário acertar todos os cards. O parâmetro de parada do <b>if</b> é pela igualdade do tamanho do array cardCombinados e o array cardArray dividido por 2, pois, como mencionado anteriormente, este array tem elementos duplicados. 
 
 </p>
 
